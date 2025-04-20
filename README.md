@@ -1,4 +1,4 @@
-# MonyMate Bot
+# MoneyMate Bot
 
 A Telegram bot designed to help manage finances by interacting with Google Sheets and potentially leveraging the Gemini API for advanced features.
 
