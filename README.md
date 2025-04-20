@@ -1,4 +1,4 @@
-# MonyMate Bot
+# MoneyMate Bot
 
 A Telegram bot designed to help manage finances by interacting with Google Sheets and potentially leveraging the Gemini API for advanced features.
 
@@ -59,55 +59,44 @@ A Telegram bot designed to help manage finances by interacting with Google Sheet
    ```bash
    docker build -t monymate-bot .
    ```
-
 2. **Run the Docker container:**
 
-    **Method 1: Passing environment variables directly**
+   **Method 1: Passing environment variables directly**
 
-    You need to pass your Telegram Bot Token, Gemini API Key, Master Sheet ID, and Service Account Email as environment variables. Replace the placeholder values with your actual credentials.
-    ```bash
-    docker run -d --name monymate-container \
-        -e TELEGRAM_BOT_TOKEN=<YOUR_TELEGRAM_BOT_TOKEN> \
-        -e GEMINI_API_KEY=<YOUR_GEMINI_API_KEY> \
-        -e MASTER_SHEET_ID=<YOUR_MASTER_SHEET_ID> \
-        -e SERVICE_ACCOUNT_EMAIL=<YOUR_SERVICE_ACCOUNT_EMAIL> \
-        monymate-bot
-    ```
-    *   `-d`: Run the container in detached mode (in the background).
-    *   `--name monymate-container`: Assign a name to the container for easier management.
-    *   `-e VARIABLE=value`: Set environment variables required by the application.
+   You need to pass your Telegram Bot Token, Gemini API Key, Master Sheet ID, and Service Account Email as environment variables. Replace the placeholder values with your actual credentials.
 
-    **Method 2: Using a `.env` file**
+   ```bash
+   docker run -d --name monymate-container \
+       -e TELEGRAM_BOT_TOKEN=<YOUR_TELEGRAM_BOT_TOKEN> \
+       -e GEMINI_API_KEY=<YOUR_GEMINI_API_KEY> \
+       -e MASTER_SHEET_ID=<YOUR_MASTER_SHEET_ID> \
+       -e SERVICE_ACCOUNT_EMAIL=<YOUR_SERVICE_ACCOUNT_EMAIL> \
+       monymate-bot
+   ```
 
-    a.  Create a file named `.env` in the root directory of the project.
-    b.  Add your credentials to the `.env` file like this:
+   * `-d`: Run the container in detached mode (in the background).
+   * `--name monymate-container`: Assign a name to the container for easier management.
+   * `-e VARIABLE=value`: Set environment variables required by the application.
 
-        ```dotenv
-        # .env file
-        TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-        GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-        MASTER_SHEET_ID=YOUR_MASTER_SHEET_ID
-        SERVICE_ACCOUNT_EMAIL=YOUR_SERVICE_ACCOUNT_EMAIL
-        ```
-        **Important:** Make sure the `.env` file is added to your `.gitignore` to avoid committing sensitive information.
+   **Method 2: Using a `.env` file**
 
-    c.  Run the container using the `--env-file` flag:
-        ```bash
-        docker run -d --name monymate-container --env-file .env monymate-bot
-        ```
+   a.  Create a file named `.env` in the root directory of the project.
+   b.  Add your credentials to the `.env` file like this:
 
+   ``dotenv # .env file TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN GEMINI_API_KEY=YOUR_GEMINI_API_KEY MASTER_SHEET_ID=YOUR_MASTER_SHEET_ID SERVICE_ACCOUNT_EMAIL=YOUR_SERVICE_ACCOUNT_EMAIL ``
+
+   c.  Run the container using the `--env-file` flag:
+   ``bash docker run -d --name monymate-container --env-file .env monymate-bot ``
 3. **View logs (Optional):**
 
    ```bash
    docker logs monymate-container -f
    ```
-
 4. **Stop the container:**
 
    ```bash
    docker stop monymate-container
    ```
-
 5. **Remove the container:**
 
    ```bash
@@ -117,6 +106,10 @@ A Telegram bot designed to help manage finances by interacting with Google Sheet
 ## Usage
 
 Interact with the bot on Telegram using the defined commands (check `bot_handlers.py` for available commands).
+
+## Try the Bot
+
+You can try out a running instance of this bot on Telegram: [@Minnyat_moneyMate_bot](https://t.me/Minnyat_moneyMate_bot)
 
 ## Contributing
 
