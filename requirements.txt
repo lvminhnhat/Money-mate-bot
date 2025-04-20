@@ -1,0 +1,7 @@
+python-telegram-bot[ext]
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+google-generativeai
+python-dotenv
+matplotlib # Add matplotlib for charting
